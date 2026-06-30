@@ -1,22 +1,14 @@
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
-  testDir: './tests',
-  timeout: 60_000,
-  expect: { timeout: 10_000 },
-  fullyParallel: false, // banking flows must be sequential
-  retries: 1,
-  reporter: [['html', { outputFolder: 'playwright-report' }], ['list']],
+  testDir: "./tests",
+
   use: {
-    baseURL: 'https://parabank.parasoft.com/parabank',
-    trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
+    baseURL: "https://parabank.parasoft.com/parabank",
+    browserName: "chromium",
     headless: true,
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+    trace: "on-first-retry",
   },
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-  ],
 });

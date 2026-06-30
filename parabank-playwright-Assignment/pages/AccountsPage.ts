@@ -4,7 +4,7 @@ export class AccountsPage {
   constructor(private readonly page: Page) {}
 
   async navigate(): Promise<void> {
-    await this.page.goto('/overview.htm');
+    await this.page.goto('/overview.html');
   }
 
   async assertAccountVisible(accountId: string): Promise<void> {
@@ -15,7 +15,7 @@ export class AccountsPage {
 
   async getAccountBalance(accountId: string): Promise<number> {
     // Navigate to account detail to get balance from UI
-    await this.page.goto(`/activity.htm?id=${accountId}`);
+    await this.page.goto(`/activity.html?id=${accountId}`);
     const balanceText = await this.page
       .locator('#balance')
       .textContent();

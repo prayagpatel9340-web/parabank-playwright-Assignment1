@@ -4,7 +4,7 @@ export class TransferPage {
   constructor(private readonly page: Page) {}
 
   async navigate(): Promise<void> {
-    await this.page.goto('/transfer.htm');
+    await this.page.goto('/transfer.html');
   }
 
   async transfer(

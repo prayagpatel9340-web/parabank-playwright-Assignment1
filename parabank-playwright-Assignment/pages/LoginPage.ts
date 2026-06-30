@@ -4,7 +4,7 @@ export class LoginPage {
   constructor(private readonly page: Page) {}
 
   async navigate(): Promise<void> {
-    await this.page.goto('/index.htm');
+    await this.page.goto('/index.html');
   }
 
   async login(username: string, password: string): Promise<void> {

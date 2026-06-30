@@ -5,7 +5,7 @@ export class RegistrationPage {
   constructor(private readonly page: Page) {}
 
   async navigate(): Promise<void> {
-    await this.page.goto('/register.htm');
+    await this.page.goto('/register.html');
   }
 
   async register(user: UserCredentials): Promise<void> {
